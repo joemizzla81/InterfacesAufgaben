@@ -9,12 +9,12 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
 
 public class PetRequestHelper {
-
+    // Wert als KonstruktorAttribut übergeben oder in der Before... setzen
     public PetRequestHelper() {
 
         RestAssured.baseURI = "https://petstore.swagger.io/v2";
     }
-
+    //TODO: Die Helpermethoden sollten die Responses zurückgen. Sonst
     public void createPetEntry(PetEntry petEntry){
 
         Response response = (Response) given()
@@ -148,6 +148,7 @@ public class PetRequestHelper {
                 .body("id", not(hasItem(818181)));
     }
 
+    // Verallgemeinern: findPetByStatus
     public void findPetByStatusInvalidStatus(PetEntry petEntry){
 
         Response response = (Response) given()
@@ -165,6 +166,7 @@ public class PetRequestHelper {
                 .body("status", not(hasItem("sold")));
     }
 
+    //TODO: PutUpdatePet
     public void putUpdatePetExistingPet(PetEntry petEntry){
 
         Response response = (Response) given()

@@ -1,7 +1,11 @@
 package de.josef.tests.domain;
 
 public class PetEntry {
-
+    // Sichbarkeit der Attributen lieber private machen
+    // Das setzen der default Variablen in den Tests bzw. in einer anderen Stelle setzen
+    // Methodenname refactoren
+    // Namen der Methoden Argumenten/Parameter
+    // Definition der Attributen gruppieren
     int id;
     String name;
     String[] photoUrls;
@@ -9,10 +13,9 @@ public class PetEntry {
     String status;
     String nametag;
     int tagid;
-
     int validId1 = 9991;
     int validId2 = 818;
-    int validId3= 818181;
+    int validId3 = 818181;
     int validId4 = 88971123;
     int invalidId1 = 818999911;
     int invalidId2 = 547414441;
@@ -20,7 +23,6 @@ public class PetEntry {
     String petName1 = "New Pet with Photo Urls";
     String petName2 = "New Pet Only Name Field And ID And Status";
     String petNameForPutUpdate = "New Pet with Photo Urls Pet818 Name Updated VIA PUT RestAssured using a very long name in this case but not too extreme";
-
 
 
     String petName2ForPutUpdateNotExistingPet ="Pet Update via PUT for not existing Pet";
